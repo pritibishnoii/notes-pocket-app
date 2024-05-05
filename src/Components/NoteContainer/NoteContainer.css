@@ -1,0 +1,49 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    margin-left: 12%;
+}
+
+.container{
+    display: flex;
+    height: 100vh;
+    overflow:hidden ;
+
+}
+
+
+.notes-section {
+  margin: auto;
+  text-align: center;
+
+}
+
+.note-text {
+  font-size: 40px;
+  font-weight: 700;
+
+}
+
+.note-description {
+  font-size: 20px;
+  font-weight: 500;
+  width: 600px;
+
+}
+
+.Note-bg-img {
+  width: 500px;
+ 
+}
+
+.encrypted-box{
+
+    display: flex;
+    justify-content: center;
+   
+}
+  
+ 
+  
+
