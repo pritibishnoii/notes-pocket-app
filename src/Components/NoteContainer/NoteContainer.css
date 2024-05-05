@@ -1,8 +1,9 @@
 .main{
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
-    margin-left: 12%;
+    align-items: center;
+    justify-content: center;
+    /* margin-left: 12%; */
 }
 
 .container{

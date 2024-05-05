@@ -2,7 +2,7 @@ import React from 'react';
 import './Sidebar.css';
 import addNotesButton from '../../assets/add-btn.png';
 
-function Sidebar() {
+function Sidebar({showPopup,setShowPopup}) {
   return (
     <>
       <div className="container">
@@ -65,7 +65,11 @@ function Sidebar() {
             </div>
           </div>
         </div>
-        <img className="add-btn-img" src={addNotesButton} alt="add-btn" srcset="" />
+        <img 
+            onClick={ ()=> setShowPopup(true)}
+            className="add-btn-img"
+            src={addNotesButton} 
+            alt="add-btn" />
       </div>
 
     </>

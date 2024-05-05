@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.first-sec{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  background-color: rgba(126, 201, 176, 0.6);
+}
+
+.card {
+  width: 400px;
+  height: 200px;
+  background-color: #d6dae1;
+  margin: 12% auto;
+  padding: 22px;
+}
