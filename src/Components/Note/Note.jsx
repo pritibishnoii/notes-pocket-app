@@ -55,13 +55,9 @@ function Note({ showPopup, setShowPopup }) {
           <div className="color-box">
             {
               colors.map((color, index) => {
-                {/* console.log(color) */ }
-                {/* const colorId = color.replace("#", "") */ }
-                {/* console.log(colorId) */ }
-
                 return (
                   <div
-                    className="colorDiv selected"
+                       className={` ${'colorDiv'} ${tempColor.current === color && 'selected'}`}
                     key={index}
                     style={{ backgroundColor: color }}
                     onClick={() => {
