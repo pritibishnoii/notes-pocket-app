@@ -15,54 +15,6 @@ function Sidebar({showPopup,setShowPopup}) {
               <h1 className='circle'>MN</h1>
               <h1 className='note-title'>My Notes</h1>
             </div>
-            <div className='notes-title-section'>
-              <h1 className='circle'>MN</h1>
-              <h1 className='note-title'>My Notes</h1>
-            </div>
-            <div className='notes-title-section'>
-              <h1 className='circle'>MN</h1>
-              <h1 className='note-title'>My Notes</h1>
-            </div>
-            <div className='notes-title-section'>
-              <h1 className='circle'>MN</h1>
-              <h1 className='note-title'>My Notes</h1>
-            </div>
-            <div className='notes-title-section'>
-              <h1 className='circle'>MN</h1>
-              <h1 className='note-title'>My Notes</h1>
-            </div>
-            <div className='notes-title-section'>
-              <h1 className='circle'>MN</h1>
-              <h1 className='note-title'>My Notes</h1>
-            </div>
-            <div className='notes-title-section'>
-              <h1 className='circle'>MN</h1>
-              <h1 className='note-title'>My Notes</h1>
-            </div>
-            <div className='notes-title-section'>
-              <h1 className='circle'>MN</h1>
-              <h1 className='note-title'>My Notes</h1>
-            </div>
-            <div className='notes-title-section'>
-              <h1 className='circle'>MN</h1>
-              <h1 className='note-title'>My Notes</h1>
-            </div>
-            <div className='notes-title-section'>
-              <h1 className='circle'>MN</h1>
-              <h1 className='note-title'>My Notes</h1>
-            </div>
-            <div className='notes-title-section'>
-              <h1 className='circle'>MN</h1>
-              <h1 className='note-title'>My Notes</h1>
-            </div>
-            <div className='notes-title-section'>
-              <h1 className='circle'>MN</h1>
-              <h1 className='note-title'>My Notes</h1>
-            </div>
-            <div className='notes-title-section'>
-              <h1 className='circle'>MN</h1>
-              <h1 className='note-title'>My Notes</h1>
-            </div>
           </div>
         </div>
         <img 

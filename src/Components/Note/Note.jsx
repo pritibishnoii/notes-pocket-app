@@ -1,28 +1,86 @@
-import React from 'react'
+import React, { useState, useRef } from 'react'
 import './Note.css'
 
-function Note(  {showPopup,setShowPopup}) {
-  const colors= [
-      'B38BFA',
-      'FF79F2',
-      '43E6FC',
-      'F19576',
-      '0047FF',
-      '6691FF'
+function Note({ showPopup, setShowPopup }) {
+  const [selectedColor, setSelectedColor] = useState('');
+  const [inputVal, setInputVal] = useState('');
+  const [error, setError] = useState(false);
+
+  let tempColor = useRef()
+
+
+  const colors = [
+    "#B38BFA",
+    "#FF79F2",
+    "#43E6FC",
+    "#F19576",
+    "#0047FF",
+    "#6691FF",
   ]
-  return (
+
+  const addNotes = () => {
+
+    if (selectedColor === '') setError(true);
+    if(inputVal==='') setError(true);
    
+
+  }
+
+
+  return (
+
     <>
-     
-    <div className='first-sec'  onClick={()=>setShowPopup(false)}>
-    <div className="card">
-      <p>Create Notes</p>
-      <label htmlFor='note'>Create group name</label>
-      <input type="text" id="note" />
-      <p>Choose color</p>  
-      <button>Create</button>
-    </div>
-    </div>
+
+      <div className='transparent-bg' onClick={() => setShowPopup(false)}>
+      </div>
+
+      <div className="addnote-card" >
+        <p className='create-group-tittle'>Create New group</p>
+        <label className=' choose-grp-name create-group-tittle' htmlFor='note'>Group Name
+          <input
+            onChange={(e) => setInputVal(e.target.value)}
+            type="text"
+            id="note"
+            placeholder='Enter  group name' /></label>
+        <div className="choose-color-box">
+          <label className=' choose-color  create-group-tittle'>Choose colour</label>
+          <div className="color-box">
+            {
+              colors.map((color, index) => {
+                {/* console.log(color) */ }
+                const colorId = color.replace("#", "")
+                {/* console.log(colorId) */ }
+                return (
+                  <div
+                    className="colorDiv"
+                    key={index}
+                    style={{ backgroundColor: color }}
+                    onClick={() => {
+                      setSelectedColor(color);
+                      tempColor.current = color;
+                      console.log(tempColor)
+                      console.log(color)
+                    }}
+
+                  ></div>
+                )
+
+              })
+            }
+          </div>
+        </div>
+
+        <button
+          onClick={addNotes}
+          className='create-btn'>Create</button>
+        {error && (
+          <label
+            className="error-text">
+            Yet to fill one or both fields
+          </label>
+        )}
+      </div>
+
     </>
   )
 }
