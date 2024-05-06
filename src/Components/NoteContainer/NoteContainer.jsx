@@ -5,12 +5,12 @@ import BgImg from '../../assets/BgImg.png';
 import lockImg from '../../assets/lockImg.png';
 
 import { BiSolidLock } from "react-icons/bi";
-function NoteContainer({showPopup,setShowPopup}) {
+function NoteContainer({setShowPopup}) {
  
   return (
     <>
       <div className='container'>
-        <Sidebar showPopup={showPopup}  setShowPopup={setShowPopup}></Sidebar>
+        <Sidebar setShowPopup={setShowPopup}></Sidebar>
 
 
         <div className='main'>
@@ -24,7 +24,7 @@ function NoteContainer({showPopup,setShowPopup}) {
 
           </div>
           <div className='encrypted-box'>
-            <BiSolidLock style={{ 'marginTop': '18px', 'marginRight': '9px' }} />
+            <BiSolidLock style={{ 'marginTop': '2px', 'marginRight': '9px' }} />
             <p className='encrypted-text'> end-to-end encrypted</p>
           </div>
 

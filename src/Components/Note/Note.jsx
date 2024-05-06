@@ -1,10 +1,13 @@
 import React, { useState, useRef } from 'react'
 import './Note.css'
 
+
 function Note({ showPopup, setShowPopup }) {
   const [selectedColor, setSelectedColor] = useState('');
   const [inputVal, setInputVal] = useState('');
   const [error, setError] = useState(false);
+
+
 
   let tempColor = useRef()
 
@@ -21,8 +24,13 @@ function Note({ showPopup, setShowPopup }) {
   const addNotes = () => {
 
     if (selectedColor === '') setError(true);
-    if(inputVal==='') setError(true);
-   
+    if (inputVal === '') setError(true);
+    else {
+      setShowPopup(false)
+      // console.log(`add note --->${inputVal} ${selectedColor}`)
+
+
+    }
 
   }
 
@@ -48,11 +56,12 @@ function Note({ showPopup, setShowPopup }) {
             {
               colors.map((color, index) => {
                 {/* console.log(color) */ }
-                const colorId = color.replace("#", "")
+                {/* const colorId = color.replace("#", "") */ }
                 {/* console.log(colorId) */ }
+
                 return (
                   <div
-                    className="colorDiv"
+                    className="colorDiv selected"
                     key={index}
                     style={{ backgroundColor: color }}
                     onClick={() => {
@@ -60,6 +69,7 @@ function Note({ showPopup, setShowPopup }) {
                       tempColor.current = color;
                       console.log(tempColor)
                       console.log(color)
+
                     }}
 
                   ></div>
