@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/notes-pocket-app/static/css/main.77f2e7d6.css",
+    "main.js": "/notes-pocket-app/static/js/main.5399a811.js",
+    "static/media/BgImg.png": "/notes-pocket-app/static/media/BgImg.051c5dd6cf08bd17366f.png",
+    "index.html": "/notes-pocket-app/index.html",
+    "main.77f2e7d6.css.map": "/notes-pocket-app/static/css/main.77f2e7d6.css.map",
+    "main.5399a811.js.map": "/notes-pocket-app/static/js/main.5399a811.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.77f2e7d6.css",
+    "static/js/main.5399a811.js"
+  ]
+}
