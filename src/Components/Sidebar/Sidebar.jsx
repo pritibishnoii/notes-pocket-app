@@ -11,7 +11,6 @@ function Sidebar() {
   const [groups, setGroups] = useState([]);
 
 
-
   let tempColor = useRef()
 
 
@@ -27,114 +26,130 @@ function Sidebar() {
 
 
 
+  const getInputTitle= (word)=>{
+    let splitWord = word.split(" ");
+  // if ( splitWord.length>1 splitWord[0] )
+    if (splitWord.length === 1) {
+      return splitWord[0].slice(0, 2).toUpperCase();
+    } else {
+      const firstIndex = Math.floor(Math.random() * splitWord.length);
+      const secondIndex =
+        (firstIndex + 1 + Math.floor(Math.random() * (splitWord.length - 1))) %
+        splitWord.length;
+
+      const firstLetter = splitWord[firstIndex][0] || "";
+      const secondLetter = splitWord[secondIndex][0] || "";
+
+      return firstLetter.toUpperCase() + secondLetter.toUpperCase();
+    }
+
+
+  }
   const createNoteTitle = () => {
 
-    if (selectedColor === '' || inputVal.trim()==='') {
+    if (selectedColor === '' || inputVal.trim() === '') {
       setError(true)
       return;
     };
     setPopup(false)
-    const newGroup = { inputVal: inputVal, color: selectedColor };
-    console.log(newGroup)
-    setGroups([...inputVal, newGroup]);
-    console.log(setGroups([...inputVal, newGroup]))
-   
+    setGroups([...groups, { inputVal: inputVal, color: selectedColor }]);
+
 
   }
 
 
 
-return (
-  <>
-    <div className="container">
-      <div className="sidebar-contaianer">
+  return (
+    <>
+      <div className="container">
+        <div className="sidebar-contaianer">
 
-        <h1 className="note-heading">Pocket Notes</h1>
+          <h1 className="note-heading">Pocket Notes</h1>
 
-        <div class="scroll-section">
-          {groups.map((group, index) => (
+          <div class="scroll-section">
+            {groups.map((group, index) => (
 
-            <div key={index} className='notes-title-section'>
-              <h1 className='circle' style={{ backgroundColor: group.color }}>
-                {`${group.inputVal}`}</h1>
-              <h1 className='notes-title'>{group.inputVal}</h1>
-            </div>
-          ))}
+              <div key={index} className='notes-title-section'>
+                <h1 className='circle' style={{ backgroundColor: group.color }}>
+                  {getInputTitle(group.inputVal)}</h1>
+                <h1 className='notes-title'>{group.inputVal}</h1>
+              </div>
+            ))}
 
 
+          </div>
+          <img
+            onClick={() => setPopup(true)}
+            className="add-btn-img"
+            src={addNotesButton}
+            alt="add-btn" />
         </div>
-        <img
-          onClick={() => setPopup(true)}
-          className="add-btn-img"
-          src={addNotesButton}
-          alt="add-btn" />
+
       </div>
 
-    </div>
 
 
 
-
-    {/* popup section  */}
-
+      {/* popup section  */}
 
 
-    {
-      popup && (
-        <div>
-          <div className='transparent-bg' onClick={() => setPopup(false)}>
-          </div>
 
-          <div className="addnote-card" >
-            <p className='create-group-tittle'>Create New group</p>
-            <label className=' choose-grp-name create-group-tittle' htmlFor='note'>Group Name
-              <input
-                onChange={(e) => setInputVal(e.target.value)}
-                type="text"
-                id="note"
-                placeholder='Enter  group name' /></label>
-            <div className="choose-color-box">
-              <label className=' choose-color  create-group-tittle'>Choose colour</label>
-              <div className="color-box">
-                {
-                  colors.map((color, index) => {
-                    return (
-                      <div
-                        className={` ${'colorDiv'} ${tempColor.current === color && 'selected'}`}
-                        key={index}
-                        style={{ backgroundColor: color }}
-                        onClick={() => {
-                          setSelectedColor(color);
-                          tempColor.current = color;
-                          console.log(tempColor)
-                          console.log(color)
-
-                        }}
-
-                      ></div>
-                    )
-
-                  })
-                }
-              </div>
+      {
+        popup && (
+          <div>
+            <div className='transparent-bg' onClick={() => setPopup(false)}>
             </div>
 
-            <button
-              onClick={createNoteTitle}
-              className='create-btn'>Create</button>
-            {error && (
-              <label
-                className="error-text">
-                fill one or both fields
-              </label>
-            )}
-          </div>
-        </div>
-      )
-    }
+            <div className="addnote-card" >
+              <p className='create-group-tittle'>Create New group</p>
+              <label className=' choose-grp-name create-group-tittle' htmlFor='note'>Group Name
+                <input
+                  onChange={(e) => setInputVal(e.target.value)}
+                  type="text"
+                  id="note"
+                  placeholder='Enter  group name' /></label>
+              <div className="choose-color-box">
+                <label className=' choose-color  create-group-tittle'>Choose colour</label>
+                <div className="color-box">
+                  {
+                    colors.map((color, index) => {
+                      return (
+                        <div
+                          className={` ${'colorDiv'} ${tempColor.current === color && 'selected'}`}
+                          key={index}
+                          style={{ backgroundColor: color }}
+                          onClick={() => {
+                            setSelectedColor(color);
+                            tempColor.current = color;
+                            console.log(tempColor)
+                            console.log(color)
 
-  </>
-)
+                          }}
+
+                        ></div>
+                      )
+
+                    })
+                  }
+                </div>
+              </div>
+
+              <button
+                onClick={createNoteTitle}
+                className='create-btn'>Create</button>
+              {error && (
+                <label
+                  className="error-text">
+                  fill one or both fields
+                </label>
+              )}
+            </div>
+          </div>
+        )
+      }
+
+    </>
+  )
 }
 
 export default Sidebar;
