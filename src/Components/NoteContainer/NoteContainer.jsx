@@ -5,12 +5,12 @@ import BgImg from '../../assets/BgImg.png';
 import lockImg from '../../assets/lockImg.png';
 
 import { BiSolidLock } from "react-icons/bi";
-function NoteContainer({setShowPopup}) {
+function NoteContainer() {
  
   return (
     <>
       <div className='container'>
-        <Sidebar setShowPopup={setShowPopup}></Sidebar>
+        <Sidebar></Sidebar>
 
 
         <div className='main'>

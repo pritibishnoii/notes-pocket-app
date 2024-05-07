@@ -1,14 +1,17 @@
 .container {
+  
   display: flex;
   background-color: #DAE5F5;
+  
+
 
 }
 
 .sidebar-contaianer{
   width: 400px;
-  height: 99.5vh;
-  /* overflow: hidden; */
-  background-color: white;
+  height: 99vh;
+  background-color: #ffffff;
+  position: relative;
  
 
 }
@@ -30,12 +33,13 @@
   padding-top: 20px;
   padding-left: 50px;
   margin-bottom: 15px;
+  border: 2px solid black;
 }
 
 .circle {
   width: 60px;
   height: 60px;
-  background-color: #0047FF;
+  /* background-color: #0047FF; */
   color: white;
   border-radius: 100%;
   font-size: 23px;
@@ -50,6 +54,7 @@
 .note-title {
   font-size: 24px;
   font-weight: 500;
+
 }
 
 /* .add-rounded{
@@ -72,9 +77,12 @@
 }
 
 .scroll-section {
-  overflow: auto;
+  /* overflow: auto; */
   width: 400px;
-  height: 100vh;
+  /* height: 100vh; */
+  display:flex;
+  flex-direction: column;
+  border: solid 1px black;
 }
 
 ::-webkit-scrollbar {
@@ -89,4 +97,101 @@
 ::-webkit-scrollbar-thumb {
   background: #FFFFFF; 
   border-radius: 5.5px;
+}
+
+
+
+
+
+.transparent-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(49, 49, 49, 0.45);
+  /* padding: 20px; */
+}
+
+.addnote-card {
+  position: absolute;
+  top: 10%;
+  left: 40%;
+  width: 430px;
+  height: 170px;
+  background-color: #ffffff;
+  margin: 12% auto;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-radius: 6px;
+}
+.create-group-tittle {
+  color: #000000;
+
+  font-size: 1rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+ 
+}
+
+
+.create-btn{
+  background-color: #001F8B;
+  width: 90px;
+  color: #ffffff;
+  padding: 5px;
+  border: none;
+  font-size: .8rem;
+  border-radius: 8px;
+  letter-spacing: 2px;
+position: absolute;
+bottom: 8%;
+right: 8%;
+}
+#note{
+  width: 270px;
+  padding: 8px;
+  border-radius: 22px;
+  outline: none;
+  border: 2px solid #CCCCCC;
+  color: #000000;
+  margin-left: 13px;
+
+  
+}
+
+
+.choose-grp-name, .choose-color{
+  font-size: .9rem;
+
+} 
+
+.colorDiv{
+ 
+    height: 20px;
+    width: 20px;
+    border-radius: 15px; 
+}
+.selected {
+  border: 1px solid black;
+}
+.choose-color-box{
+  display: flex;
+ 
+}
+.color-box{
+  display: flex;
+  gap:9px;
+  margin-left: 18px;
+}
+
+
+
+.error-text{
+  font-size: 14px;
+ color:#ff6b6b;
+
 }

@@ -1,0 +1,92 @@
+
+
+.chat-box {
+  /* background-color: crimson; */
+  width: 71vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+
+}
+.chat-screen {
+  width: 100%;
+  height: 100vh;
+  background-color: #dae5f5;
+
+}
+.header {
+  position: fixed;
+  top: 0;
+  background-color: #001f8b;
+  width: 100%;
+  height: 12vh;
+}
+
+.scroll-screen {
+  width: 100vw;
+  overflow: auto;
+  /* overflow: hidden; */
+  display: flex;
+  flex-direction: column;
+
+  /* height: 100vh; */
+}
+
+.notesBox {
+  width: 65%;
+  height: 22vh;
+  margin-top: 22px;
+  margin-left: 40px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.input-area {
+  position: fixed;
+  bottom: 0;
+  background-color: #001f8b;
+  width: 100%;
+  height: 27vh;
+}
+.inputBox {
+  position: fixed;
+  bottom: 18px;
+  width: 68%;
+  height: 21vh;
+  background-color: #ffffff;
+  border-radius: 16px;
+  margin-left: 20px;
+}
+.inputBox input {
+  width: 68%;
+  /* height: 21vh; */
+  background-color: #ffffff;
+  border-radius: 16px;
+  margin-left: 20px;
+  margin-top: 12px;
+  outline: none;
+  border: none;
+  border-radius: 16px;
+  font-size: 18px;
+}
+ 
+.send-icon{
+  position: absolute;
+ bottom: 12%;
+ right: 2%;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #d9d9d9;
+  border-radius: 5.5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ffffff;
+  border-radius: 5.5px;
+}

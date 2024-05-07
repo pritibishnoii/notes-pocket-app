@@ -8,7 +8,7 @@ function Note({ showPopup, setShowPopup }) {
   const [error, setError] = useState(false);
 
 
-
+ 
   let tempColor = useRef()
 
 
@@ -28,10 +28,8 @@ function Note({ showPopup, setShowPopup }) {
     else {
       setShowPopup(false)
       // console.log(`add note --->${inputVal} ${selectedColor}`)
-
-
+    
     }
-
   }
 
 

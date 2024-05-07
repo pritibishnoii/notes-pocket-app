@@ -1,19 +1,25 @@
-import React ,{useState} from 'react';
+import React, { useState } from 'react';
 import NoteContainer from './Components/NoteContainer/NoteContainer.jsx';
-import Note from './Components/Note/Note.jsx'
-
+import Note from './Components/Note/Note.jsx';
+import Sidebar from './Components/Sidebar/Sidebar.jsx'
+import NoteChat from './Components/NoteChat/NoteChat.jsx';
 
 
 function App() {
-  const [showPopup,setShowPopup] = useState(false);
+  
+
+  const [notesData, setNotesData] = useState([]); 
+
+
 
   return (
     <>
-     <NoteContainer showPopup={showPopup}  setShowPopup={setShowPopup} ></NoteContainer>
-     {
-      showPopup &&  <Note showPopup={showPopup}  setShowPopup={setShowPopup} />
-     }
-   
+    
+      <NoteContainer ></NoteContainer>
+     
+      
+{/* <NoteChat></NoteChat> */}
+
     </>
   )
 }
