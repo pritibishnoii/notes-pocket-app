@@ -11,7 +11,7 @@ function Sidebar() {
   const [groups, setGroups] = useState([]);
 
 
-  let tempColor = useRef()
+  let colorRef = useRef()
 
 
   const colors = [
@@ -113,13 +113,13 @@ function Sidebar() {
                     colors.map((color, index) => {
                       return (
                         <div
-                          className={` ${'colorDiv'} ${tempColor.current === color && 'selected'}`}
+                          className={` ${'colorDiv'} ${colorRef.current === color && 'selected'}`}
                           key={index}
                           style={{ backgroundColor: color }}
                           onClick={() => {
                             setSelectedColor(color);
-                            tempColor.current = color;
-                            console.log(tempColor)
+                            colorRef.current = color;
+                            console.log(colorRef)
                             console.log(color)
 
                           }}
