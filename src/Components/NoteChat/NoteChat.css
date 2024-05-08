@@ -1,20 +1,15 @@
-
-
 .chat-box {
-  /* background-color: crimson; */
   width: 71vw;
   height: 100vh;
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
-
 }
 .chat-screen {
   width: 100%;
   height: 100vh;
   background-color: #dae5f5;
-
 }
 .header {
   position: fixed;
@@ -57,22 +52,27 @@
 }
 
 .input-area textarea {
-  width: 65%;
-  height: 130px;
-  /* overflow: auto; */
+  width: 67%;
+  height: 160px;
   outline: none;
   border: none;
-  padding: 1rem;
   resize: none;
   font-size: 1rem;
-  border-radius: 8px; 
+  border-radius: 8px;
   margin-left: 25px;
   margin-top: 16px;
-  
+
 }
+#sendIcon{
+  display: flex;
+ margin-left: 880px;
+ position: absolute;
+ bottom: 32px;
  
-
-
+}
+.send-msg{
+  cursor: pointer;
+}
 
 ::-webkit-scrollbar {
   width: 10px;

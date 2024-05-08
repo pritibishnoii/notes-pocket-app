@@ -21,8 +21,9 @@ function NoteChat() {
                     <textarea
                         placeholder="Enter your text here">
                     </textarea>
-                    <div id="sendIcon">
-                    <img src={sendImg} alt="send" />
+                    <div id="sendIcon"
+                         >
+                    <img src={sendImg} alt="send" className='send-msg' />
                     </div>
                    
             </div>
