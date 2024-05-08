@@ -1,19 +1,13 @@
 .container {
-  
   display: flex;
-  background-color: #DAE5F5;
-  
-
-
+  background-color: #dae5f5;
 }
 
-.sidebar-contaianer{
+.sidebar-contaianer {
   width: 400px;
   height: 99vh;
   background-color: #ffffff;
   position: relative;
- 
-
 }
 
 .note-heading {
@@ -28,18 +22,19 @@
 }
 
 .notes-title-section {
+  height: 10vh;
   display: flex;
+  gap: 2;
   align-items: center;
-  padding-top: 20px;
+  /* padding-top: 16px; */
   padding-left: 50px;
   margin-bottom: 15px;
-
+ 
 }
 
 .circle {
   width: 60px;
   height: 60px;
-  /* background-color: #0047FF; */
   color: white;
   border-radius: 100%;
   font-size: 23px;
@@ -51,22 +46,11 @@
   margin-right: 25px;
 }
 
-.note-title {
+.notes-title {
+
   font-size: 24px;
-  font-weight: 500;
-
+  font-weight: 700;
 }
-
-/* .add-rounded{
-  position: relative;
-  width: 70px;
-  height: 70px;
-  border-radius: 100%;
-  background-color: #16008B;
-  color: #FFFFFF;
- 
-} */
-
 
 .add-btn-img {
   width: 70px;
@@ -80,9 +64,9 @@
   overflow: auto;
   width: 400px;
   height: 100vh;
+
   /* display:flex;
   flex-direction: column; */
-
 }
 
 ::-webkit-scrollbar {
@@ -90,18 +74,14 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #D9D9D9; 
+  background: #d9d9d9;
   border-radius: 5.5px;
 }
- 
+
 ::-webkit-scrollbar-thumb {
-  background: #FFFFFF; 
+  background: #ffffff;
   border-radius: 5.5px;
 }
-
-
-
-
 
 .transparent-bg {
   position: absolute;
@@ -134,64 +114,55 @@
   font-family: "Roboto", sans-serif;
   font-weight: 600;
   font-style: normal;
- 
 }
 
-
-.create-btn{
-  background-color: #001F8B;
-  width: 90px;
+.create-btn {
+  background-color: #001f8b;
+  width: 98px;
   color: #ffffff;
-  padding: 5px;
+  padding: 9px;
   border: none;
-  font-size: .8rem;
+  font-size: 0.8rem;
   border-radius: 8px;
   letter-spacing: 2px;
-position: absolute;
-bottom: 8%;
-right: 8%;
+  position: absolute;
+  bottom: 8%;
+  right: 8%;
 }
-#note{
+
+#note {
   width: 270px;
   padding: 8px;
   border-radius: 22px;
   outline: none;
-  border: 2px solid #CCCCCC;
+  border: 2px solid #cccccc;
   color: #000000;
   margin-left: 13px;
-
-  
 }
 
 
-.choose-grp-name, .choose-color{
-  font-size: .9rem;
+.choose-color {
+  font-size: 0.9rem;
+}
 
-} 
-
-.colorDiv{
- 
-    height: 20px;
-    width: 20px;
-    border-radius: 15px; 
+.colorDiv {
+  height: 24px;
+  width: 24px;
+  border-radius: 15px;
 }
 .selected {
   border: 1px solid black;
 }
-.choose-color-box{
+.choose-color-box {
   display: flex;
- 
 }
-.color-box{
+.color-box {
   display: flex;
-  gap:9px;
+  gap: 9px;
   margin-left: 18px;
 }
 
-
-
-.error-text{
+.error-text {
   font-size: 14px;
- color:#ff6b6b;
-
+  color: #ff6b6b;
 }

@@ -1,19 +1,17 @@
 import React, { useState, useRef } from 'react';
 import './Sidebar.css';
 import addNotesButton from '../../assets/add-btn.png';
-function Sidebar() {
 
+
+function Sidebar() {
 
   const [popup, setPopup] = useState(false);
   const [selectedColor, setSelectedColor] = useState('');
   const [inputVal, setInputVal] = useState('');
   const [error, setError] = useState(false);
   const [groups, setGroups] = useState([]);
-
-
+ 
   let colorRef = useRef()
-
-
   const colors = [
     "#B38BFA",
     "#FF79F2",
@@ -22,14 +20,8 @@ function Sidebar() {
     "#0047FF",
     "#6691FF",
   ]
-
-
-
-
-  const getTitle = (word) => {
-
+  const getTitleLetter = (word) => {
     let splitWord = word.trim().split(" ");
-    console.log(splitWord)
     if (splitWord.length === 1) {
       return splitWord[0].slice(0, 2).toUpperCase();
     } else {
@@ -37,44 +29,34 @@ function Sidebar() {
       const secondIndex = splitWord.length - 1   // return 1
       const firstLetter = splitWord[firstIndex][0] || "";
       const secondLetter = splitWord[secondIndex][0] || "";
-      // console.log( firstLetter.toUpperCase() + secondLetter.toUpperCase())
       return  firstLetter.toUpperCase() + secondLetter.toUpperCase();
     }
-
-
   }
-  const createNoteTitle = () => {
 
+  const createNoteTitle = () => {
     if (selectedColor === '' || inputVal.trim() === '') {
       setError(true)
       return;
     };
+   localStorage.setItem('groupdata','groups')
     setPopup(false)
     setGroups([...groups, { inputVal: inputVal, color: selectedColor }]);
-
-
   }
-
-
 
   return (
     <>
+    {/* displaying note title */}
       <div className="container">
         <div className="sidebar-contaianer">
-
           <h1 className="note-heading">Pocket Notes</h1>
-
           <div class="scroll-section">
             {groups.map((group, index) => (
-
               <div key={index} className='notes-title-section'>
                 <h1 className='circle' style={{ backgroundColor: group.color }}>
-                  {getTitle(group.inputVal)}</h1>
-                <h1 className='notes-title'>{group.inputVal}</h1>
+                  {getTitleLetter(group.inputVal)}</h1>
+                <h1 className='notes-title'>{group.inputVal.charAt(0).toUpperCase() + group.inputVal.slice(1)}</h1>
               </div>
             ))}
-
-
           </div>
           <img
             onClick={() => setPopup(true)}
@@ -82,22 +64,14 @@ function Sidebar() {
             src={addNotesButton}
             alt="add-btn" />
         </div>
-
       </div>
 
-
-
-
       {/* popup section  */}
-
-
-
       {
         popup && (
           <div>
             <div className='transparent-bg' onClick={() => setPopup(false)}>
             </div>
-
             <div className="addnote-card" >
               <p className='create-group-tittle'>Create New group</p>
               <label className=' choose-grp-name create-group-tittle' htmlFor='note'>Group Name
@@ -119,19 +93,13 @@ function Sidebar() {
                           onClick={() => {
                             setSelectedColor(color);
                             colorRef.current = color;
-                            console.log(colorRef)
-                            console.log(color)
-
                           }}
-
-                        ></div>
+></div>
                       )
-
                     })
                   }
                 </div>
               </div>
-
               <button
                 onClick={createNoteTitle}
                 className='create-btn'>Create</button>
