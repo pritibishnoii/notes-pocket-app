@@ -26,7 +26,7 @@ function Sidebar() {
 
 
 
-  const getInputTitle = (word) => {
+  const getTitle = (word) => {
 
     let splitWord = word.trim().split(" ");
     console.log(splitWord)
@@ -69,7 +69,7 @@ function Sidebar() {
 
               <div key={index} className='notes-title-section'>
                 <h1 className='circle' style={{ backgroundColor: group.color }}>
-                  {getInputTitle(group.inputVal)}</h1>
+                  {getTitle(group.inputVal)}</h1>
                 <h1 className='notes-title'>{group.inputVal}</h1>
               </div>
             ))}
