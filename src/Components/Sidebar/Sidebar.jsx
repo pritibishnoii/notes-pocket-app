@@ -26,21 +26,19 @@ function Sidebar() {
 
 
 
-  const getInputTitle= (word)=>{
-    let splitWord = word.split(" ");
-  // if ( splitWord.length>1 splitWord[0] )
+  const getInputTitle = (word) => {
+
+    let splitWord = word.trim().split(" ");
+    console.log(splitWord)
     if (splitWord.length === 1) {
       return splitWord[0].slice(0, 2).toUpperCase();
     } else {
-      const firstIndex = Math.floor(Math.random() * splitWord.length);
-      const secondIndex =
-        (firstIndex + 1 + Math.floor(Math.random() * (splitWord.length - 1))) %
-        splitWord.length;
-
+      const firstIndex = 0
+      const secondIndex = splitWord.length - 1   // return 1
       const firstLetter = splitWord[firstIndex][0] || "";
       const secondLetter = splitWord[secondIndex][0] || "";
-
-      return firstLetter.toUpperCase() + secondLetter.toUpperCase();
+      // console.log( firstLetter.toUpperCase() + secondLetter.toUpperCase())
+      return  firstLetter.toUpperCase() + secondLetter.toUpperCase();
     }
 
 
