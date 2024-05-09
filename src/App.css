@@ -187,6 +187,63 @@ body{
   
 
 
+.container {
+  display: flex;
+  background-color: #dae5f5;
+  width: 100%;
+  height: 100vh;
+
+ 
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 70%;
+  align-items: center;
+  transform: translate(-20%, 10%);
+
+}
+
+.notes-section {
+  margin: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+
+}
+
+.note-text {
+  font-size: 40px;
+  font-weight: 700;
+
+}
+
+.note-description {
+  font-size: 20px;
+  font-weight: 500;
+  width: 600px;
+
+}
+
+.Note-bg-img {
+  width: 500px;
+}
+
+.encrypted-box{
+
+    display: flex;
+   position: absolute;
+   bottom: 12px;
+   left: 20%;
+   
+}
+
+
+
+
 
 @media only screen and (max-width: 768px) {
 }

@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import './Home.module.css'
+import '../../App.css'
 
 import BgImg from '../../assets/BgImg.png';
 import lockImg from '../../assets/lockImg.png';
@@ -23,7 +23,7 @@ function NoteContainer() {
   }
   return (
     <>
-      <div className="container">
+      {/* <div className="container">
         <div className='main'>
           <div className="notes-section">
             <img className='Note-bg-img' src={BgImg} alt="background" />
@@ -41,20 +41,20 @@ function NoteContainer() {
           <p className='encrypted-text'> end-to-end encrypted</p>
         </div>
 
-      </div>
+      </div> */}
 
 
-
-
-      <div className="chatSc">
-        <div className="header">
-          <img src={backIcon} alt="back" />
+<div className="chat-container" style={{backgroundColor:'#dae5f5',position:'absolute',left:'29%',width:'71%'}}>
+<div className="chatSc">
+        <div className="header" style={{width:'100%',height:'90px',backgroundColor:'blue',display:'flex',gap:'22px'}}>
+          <img src={backIcon} alt="back"  style={{width:'22px',height:'22px',marginTop:'22px',marginLeft:'22px'}}/>
           <h1 >HM</h1>
           <h1>html ml</h1>
         </div>
 
-        <div className="chat-input" style={{ marginTop: '420px' }}>
+        <div className="chat-input" style={{ marginTop: '388px',width:'100%',height:'25vh',backgroundColor:'blue' }}>
           <textarea
+          style={{resize:'none',width:'93%',height:'18vh',backgroundColor:'#fff',margin:'22px'}}
             value={text}
             onChange={setTextArea}
             placeholder="Enter your text here"
@@ -62,11 +62,19 @@ function NoteContainer() {
           <div
             onClick={addTextNotes}
             className="send-btn"
-            style={{ backgroundColor: 'black', height: '90px' }}>
-            <img src={sendIcon} alt="send" style={{ margin: '32px ' }} />
+            style={{  height: '70px',width:'70px',position:'absolute' ,bottom:'32px' ,right:'8%'}}>
+            <img src={sendIcon} alt="send" style={{ margin: '32px '}} />
           </div>
         </div>
       </div>
+</div>
+
+
+
+
+
+
+      
 
 
     </>
