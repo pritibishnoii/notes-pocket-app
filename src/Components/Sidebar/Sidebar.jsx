@@ -34,7 +34,7 @@ function Sidebar() {
       setError(true)
       return;
     };
-    localStorage.setItem('groupdata', 'groups')
+    // localStorage.setItem('groupdata', 'groups')
     setPopup(false)
     setGroups([...groups, { inputVal: inputVal, color: selectedColor }]);
   }
