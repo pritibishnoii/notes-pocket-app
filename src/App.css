@@ -1,8 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Flamenco:wght@300;400&family=Josefin+Slab:ital,wght@0,100..700;1,100..700&family=Pompiere&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Tangerine:wght@400;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
 }
+body{
+  font-family: "Roboto", sans-serif;
 
+  font-style: normal;
+}
 .app {
   display: flex;
 }
@@ -101,6 +107,7 @@
   height: 100vh;
   background-color: rgba(49, 49, 49, 0.45);
   /* padding: 20px; */
+  z-index: 1;
 }
 
 .addnote-card {
@@ -116,10 +123,10 @@
   flex-direction: column;
   gap: 12px;
   border-radius: 6px;
+  z-index: 1;
 }
 .create-group-tittle {
   color: #000000;
-
   font-size: 1rem;
   font-family: "Roboto", sans-serif;
   font-weight: 600;
@@ -222,6 +229,8 @@
    
 }
   
+
+
 
 @media only screen and (max-width: 768px) {
 }

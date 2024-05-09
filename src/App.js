@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Sidebar from './Components/Sidebar/Sidebar.jsx';
 import AppContext from './Context/AppContext.js';
-import NoteContainer from './Components/Home/Home.jsx';
+import Home from './Components/Home/Home.jsx';
 
 function App() {
   const [popup, setPopup] = useState(false);
@@ -29,7 +29,8 @@ function App() {
       >
         <div className='app'>
           <Sidebar></Sidebar>
-          <NoteContainer></NoteContainer>
+          
+          <Home></Home>
         </div>
       </AppContext.Provider>
 

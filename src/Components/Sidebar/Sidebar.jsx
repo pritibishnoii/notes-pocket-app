@@ -39,6 +39,8 @@ function Sidebar() {
     setGroups([...groups, { inputVal: inputVal, color: selectedColor }]);
   }
 
+
+ 
   return (
     <>
       {/* displaying note title */}
@@ -47,7 +49,7 @@ function Sidebar() {
           <h1 className="note-heading">Pocket Notes</h1>
           <div class="scroll-section">
             {groups.map((group, index) => (
-              <div key={index} className='notes-title-section'>
+              <div key={index} className='notes-title-section' >
                 <h1 className='circle' style={{ backgroundColor: group.color }}>
                   {getTitleLetter(group.inputVal)}</h1>
                 <h1 className='notes-title' >{group.inputVal.charAt(0).toUpperCase() + group.inputVal.slice(1)}</h1>
@@ -61,6 +63,7 @@ function Sidebar() {
             alt="add-btn" />
         </div>
       </div>
+
 
       {/* popup section  */}
       {
@@ -106,6 +109,7 @@ function Sidebar() {
                 </label>
               )}
             </div>
+
           </div>
         )
       }
