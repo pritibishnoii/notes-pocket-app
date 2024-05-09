@@ -1,23 +1,39 @@
 import React, { useState } from 'react';
-import NoteContainer from './Components/NoteContainer/NoteContainer.jsx';
-
-import NoteChat from './Components/NoteChat/NoteChat.jsx';
-
+import Sidebar from './Components/Sidebar/Sidebar.jsx';
+import AppContext from './Context/AppContext.js';
+import NoteContainer from './Components/Home/Home.jsx';
 
 function App() {
-  
-
-  const [notesData, setNotesData] = useState([]); 
-
-
-
+  const [popup, setPopup] = useState(false);
+  const [selectedColor, setSelectedColor] = useState('');
+  const [inputVal, setInputVal] = useState('');
+  const [error, setError] = useState(false);
+  const [groups, setGroups] = useState([]);
   return (
-    <>   
-    
-      <NoteContainer ></NoteContainer>
-     
-      
-<NoteChat></NoteChat>
+    <>
+      <AppContext.Provider
+        value={
+          {
+            popup,
+            setPopup,
+            setSelectedColor,
+            selectedColor,
+            inputVal,
+            setInputVal,
+            error,
+            setError,
+            groups,
+            setGroups,
+          }
+        }
+      >
+        <div className='app'>
+          <Sidebar></Sidebar>
+          <NoteContainer></NoteContainer>
+        </div>
+      </AppContext.Provider>
+
+
 
     </>
   )

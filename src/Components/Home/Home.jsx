@@ -1,5 +1,5 @@
 import React from 'react';
-import './NoteContainer.css';
+import '../../App.css';
 import Sidebar from '../Sidebar/Sidebar.jsx';
 import BgImg from '../../assets/BgImg.png';
 import lockImg from '../../assets/lockImg.png';
@@ -9,10 +9,7 @@ function NoteContainer() {
  
   return (
     <>
-      <div className='container'>
-        <Sidebar></Sidebar>
-
-
+<div className="container">
         <div className='main'>
           <div className="notes-section">
             <img className='Note-bg-img' src={BgImg} alt="background" />
@@ -20,18 +17,20 @@ function NoteContainer() {
             <p className='note-description'>Send and receive messages with
               out keeping your phone online. <br />
               Use Pocket Notes on up to 4 linked devices and 1 mobile phone</p>
-
-
           </div>
-          <div className='encrypted-box'>
+        </div>
+
+
+        <div className='encrypted-box'>
             <BiSolidLock style={{ 'marginTop': '2px', 'marginRight': '9px' }} />
             <p className='encrypted-text'> end-to-end encrypted</p>
           </div>
 
-        </div>
 
 
-      </div>
+
+
+</div>
 
     </>
   )

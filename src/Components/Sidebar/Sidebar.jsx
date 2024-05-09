@@ -1,16 +1,12 @@
-import React, { useState, useRef } from 'react';
-import './Sidebar.css';
+import React, { useRef, useContext } from 'react';
+import '../../App.css';
 import addNotesButton from '../../assets/add-btn.png';
+import AppContext from '../../Context/AppContext';
 
 
 function Sidebar() {
+  const { selectedColor, setSelectedColor, popup, setPopup, error, setError, inputVal, setInputVal, groups, setGroups } = useContext(AppContext)
 
-  const [popup, setPopup] = useState(false);
-  const [selectedColor, setSelectedColor] = useState('');
-  const [inputVal, setInputVal] = useState('');
-  const [error, setError] = useState(false);
-  const [groups, setGroups] = useState([]);
- 
   let colorRef = useRef()
   const colors = [
     "#B38BFA",
@@ -29,7 +25,7 @@ function Sidebar() {
       const secondIndex = splitWord.length - 1   // return 1
       const firstLetter = splitWord[firstIndex][0] || "";
       const secondLetter = splitWord[secondIndex][0] || "";
-      return  firstLetter.toUpperCase() + secondLetter.toUpperCase();
+      return firstLetter.toUpperCase() + secondLetter.toUpperCase();
     }
   }
 
@@ -38,14 +34,14 @@ function Sidebar() {
       setError(true)
       return;
     };
-   localStorage.setItem('groupdata','groups')
+    localStorage.setItem('groupdata', 'groups')
     setPopup(false)
     setGroups([...groups, { inputVal: inputVal, color: selectedColor }]);
   }
 
   return (
     <>
-    {/* displaying note title */}
+      {/* displaying note title */}
       <div className="container">
         <div className="sidebar-contaianer">
           <h1 className="note-heading">Pocket Notes</h1>
@@ -54,7 +50,7 @@ function Sidebar() {
               <div key={index} className='notes-title-section'>
                 <h1 className='circle' style={{ backgroundColor: group.color }}>
                   {getTitleLetter(group.inputVal)}</h1>
-                <h1 className='notes-title'>{group.inputVal.charAt(0).toUpperCase() + group.inputVal.slice(1)}</h1>
+                <h1 className='notes-title' >{group.inputVal.charAt(0).toUpperCase() + group.inputVal.slice(1)}</h1>
               </div>
             ))}
           </div>
@@ -69,7 +65,7 @@ function Sidebar() {
       {/* popup section  */}
       {
         popup && (
-          <div>
+          <div className='pop-up'>
             <div className='transparent-bg' onClick={() => setPopup(false)}>
             </div>
             <div className="addnote-card" >
@@ -94,7 +90,7 @@ function Sidebar() {
                             setSelectedColor(color);
                             colorRef.current = color;
                           }}
-></div>
+                        ></div>
                       )
                     })
                   }
