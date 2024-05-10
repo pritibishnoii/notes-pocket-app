@@ -6,10 +6,10 @@
 }
 body {
   font-family: "Roboto", sans-serif;
-
   font-style: normal;
 }
-.app {
+
+.root-container {
   display: flex;
 }
 

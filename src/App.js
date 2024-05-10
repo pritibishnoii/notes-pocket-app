@@ -1,14 +1,8 @@
 import React, { useState } from "react";
-
-import Home from "./Components/Home/Home.jsx";
-import Sidebar from "./Components/Sidebar/Sidebar.jsx";
+import { nanoid } from "nanoid";
+import Home from "./Components/Home";
+import Sidebar from "./Components/Sidebar";
 import AppContext from "./Context/AppContext.js";
-
-/* 
-
-Math.floor(Math.random()*Math.pow(10, 10)).toString(16)
-
-*/  
 
 
 function App() {
@@ -28,13 +22,13 @@ function App() {
   const getTitleLetter = (word) => {
     let splitWord = word.trim().split(" ");
     if (splitWord.length === 1) {
-      return splitWord[0].slice(0, 2).toUpperCase();
+      return splitWord[0].slice(0, 1).toUpperCase();
     } else {
       const firstIndex = 0;
-      const secondIndex = splitWord.length - 1   // return 1
+      const secondIndex = 1;
       const firstLetter = splitWord[firstIndex][0] || "";
       const secondLetter = splitWord[secondIndex][0] || "";
-      return firstLetter.toUpperCase() + secondLetter.toUpperCase();
+      return (firstLetter + secondLetter).toUpperCase();
     }
   }
 
@@ -43,36 +37,36 @@ function App() {
       setError(true)
       return;
     };
-    setPopup(false)
+    setPopup(false);
     setNotesGroupData([...notesGroupData, {
-      "id": "dskfh",   
+      "id": nanoid(10),
       "title": title.trim(),
       "color": color,
       "titleLetter": getTitleLetter(title),
-  }])
-    // setGroups([...groups, { inputVal: inputVal, color: selectedColor }]);
+    }])
+
+  }
+
+  const ctxValue = {
+    notesGroupData,
+    setNotesGroupData,
+    notesChatData,
+    setNotesChatData,
+    availableColors,
+    createNoteGroup,
+    popup,
+    setPopup,
+    error,
+    setError,
   }
 
   return (
-      <AppContext.Provider
-        value={{
-          notesGroupData,
-          setNotesGroupData,
-          notesChatData,
-          setNotesChatData,
-          availableColors,
-          createNoteGroup,
-          popup,
-          setPopup,
-          error,
-          setError,
-        }}
-      >
-        <div className="app">
-          <Sidebar />
-          <Home />
-        </div>
-      </AppContext.Provider>
+    <AppContext.Provider value={ctxValue}>
+      <div className="root-container">
+        <Sidebar />
+        <Home />
+      </div>
+    </AppContext.Provider>
   );
 }
 
