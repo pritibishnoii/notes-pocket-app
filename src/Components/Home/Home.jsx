@@ -16,11 +16,13 @@ function NoteContainer() {
     setText(e.target.value)
   }
 
-  const addTextNotes = (e) => {
+  const addText = () => {
     if (text.trim() !== '') {
-
+      setText(text)
     }
   }
+
+  
   return (
     <>
       {/* <div className="container">
@@ -53,9 +55,9 @@ function NoteContainer() {
           </div>
 
           <div className="note-box">
-            <p className='text-note'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia sunt veritatis sequi dolorum delectus mollitia sit? Similique qui quasi, inventore, tempore repellendus esse fugiat ex officia omnis, voluptatum nulla earum.</p>
+            <p className='text-note'>{text}</p>
             <p className='date'>9 Mar 2023</p>
-            <p className='time'>10:00 AM</p>
+            <p className='time'>10:00 AM</p> 
           </div>
 
           <div className="chat-input">
@@ -66,7 +68,7 @@ function NoteContainer() {
               onChange={(e)=>setText(e.target.value)}
             ></textarea>
             <div
-              onClick={addTextNotes}
+              onClick={addText}
               className="send-btn"
             >
               <img src={sendIcon} alt="send" />

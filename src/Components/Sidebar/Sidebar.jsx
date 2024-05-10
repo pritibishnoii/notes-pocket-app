@@ -1,45 +1,35 @@
 import React, { useRef, useContext } from 'react';
-import '../../App.css';
+
 import addNotesButton from '../../assets/add-btn.png';
 import AppContext from '../../Context/AppContext';
 
+import '../../App.css';
+
+/* 
+
+[{
+  "id": "dskfhe",
+  "chatId": "dskfhe",
+  "title": "Note 1",
+  "color": "#B38BFA",
+  "titleLetter": "JS", 100x100
+}]
+
+{
+  "dskfhe": [{
+    "id": "dskfhe",
+    "content": "dfilsjvvsldkjero",
+    "timestamp":  1715339854548
+  }] 
+}
+
+*/
+
 
 function Sidebar() {
-  const { selectedColor, setSelectedColor, popup, setPopup, error, setError, inputVal, setInputVal, groups, setGroups } = useContext(AppContext)
-
-  let colorRef = useRef()
-  const colors = [
-    "#B38BFA",
-    "#FF79F2",
-    "#43E6FC",
-    "#F19576",
-    "#0047FF",
-    "#6691FF",
-  ]
-  const getTitleLetter = (word) => {
-    let splitWord = word.trim().split(" ");
-    if (splitWord.length === 1) {
-      return splitWord[0].slice(0, 2).toUpperCase();
-    } else {
-      const firstIndex = 0
-      const secondIndex = splitWord.length - 1   // return 1
-      const firstLetter = splitWord[firstIndex][0] || "";
-      const secondLetter = splitWord[secondIndex][0] || "";
-      return firstLetter.toUpperCase() + secondLetter.toUpperCase();
-    }
-  }
-
-  const createNoteTitle = () => {
-    if (selectedColor === '' || inputVal.trim() === '') {
-      setError(true)
-      return;
-    };
-    // localStorage.setItem('groupdata', 'groups')
-    setPopup(false)
-    setGroups([...groups, { inputVal: inputVal, color: selectedColor }]);
-  }
-
-
+  const { popup, setPopup, error, setError, availableColors: colors } = useContext(AppContext);
+  const [titleText, setTitleText] = useState("");
+  const [selectedColor, setSelectedColor] = useState("");
  
   return (
     <>
