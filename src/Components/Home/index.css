@@ -1,0 +1,122 @@
+.main-container{
+    display: flex;
+    background-color: #dae5f5;
+    width: 100%;
+    height: 100vh;
+  }
+  .main-container-bg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 70%;
+    align-items: center;
+    transform: translate(-20%, 10%);
+  }
+
+.notes-section {
+    margin: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .note-text {
+    font-size: 40px;
+    font-weight: 700;
+  }
+  
+  .note-description {
+    font-size: 20px;
+    font-weight: 500;
+    width: 600px;
+  }
+  
+  .Note-bg-img {
+    width: 500px;
+  }
+  
+  .encrypted-box {
+    display: flex;
+    position: absolute;
+    bottom: 12px;
+    left: 20%;
+  }
+
+  .chat-container {
+    background-color: #dae5f5;
+    position: absolute;
+    left: 29%;
+    width: 71%;
+  }
+  .chatSc {
+    width: 100%;
+    height: 90px;
+    /* margin-left: 2px; */
+    background-color: blue;
+    position: fixed;
+    top: 0;
+  }
+  .header {
+    width: 100%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+  
+  .back-img {
+    width: 22px;
+    height: 22px;
+    margin-top: 22px;
+    margin-left: 22px;
+  }
+  .chat-input {
+    width: 70%;
+    height: 32vh;
+    background-color: blue;
+    position: fixed;
+    bottom: 0;
+    right: 5px;
+  }
+  .send-btn {
+    height: 70px;
+    transform: translate(90%, -120%);
+  }
+  .chat-input textarea {
+    resize: none;
+    width: 95%;
+    height: 25vh;
+    background-color: #fff;
+    margin: 22px;
+    outline: none;
+    border-radius: 7px;
+  }
+  ::placeholder {
+    font-size: 18px;
+  }
+  
+  .note-box {
+    width: 66%;
+    height: 200px;
+    background-color: #ffffff;
+    display: flex;
+    margin-left: 3%;
+    margin-top: 5%;
+    flex-direction: column;
+    position: relative;
+  }
+  .date {
+    position: absolute;
+    bottom: 12px;
+    right: 15%;
+  }
+  .time {
+    position: absolute;
+    bottom: 12px;
+    right: 4%;
+  }
+  .text-note {
+    margin: 26px;
+  }

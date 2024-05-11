@@ -5,35 +5,16 @@ import AppContext from "../../Context/AppContext";
 
 import "./index.css";
 
-/* 
-
-[{
-  "id": "dskfhe",
-  "chatId": "dskfhe",
-  "title": "Note 1",
-  "color": "#B38BFA",
-  "titleLetter": "JS", 100x100
-}]
-
-{
-  "dskfhe": [{
-    "id": "dskfhe",
-    "content": "dfilsjvvsldkjero",
-    "timestamp":  1715339854548
-  }] 
-}
-
-*/
 
 function Sidebar() {
   const { setPopup, notesGroupData } = useContext(AppContext);
 
   return (
     <div className="sidebar-container">
-        <h1 className="heading-section">Pocket Notes</h1>
-        <div class="geoup-section">
+        <h1 className="sidebar-heading-section">Pocket Notes</h1>
+        <div class="group-section">
           {notesGroupData.map((item) => (
-            <div key={item.id} className="notes-title-section">
+            <div key={item.id} className="notes-title-section" >
               <h1 className="circle" style={{ backgroundColor: item.color }}>
                 {item.titleLetter}
               </h1>

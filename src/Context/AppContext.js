@@ -4,11 +4,12 @@ import React from "react";
 
 {
     "notesGroupData": [{
-        "id": "dskfhe",
+        "id": "dskfhds",
         "title": "Note 1",
         "color": "#B38BFA",
         "titleLetter": "JS", 100x100
     }],
+    }
     "notesChatData": {
         "dskfhe": [{
             "id": "dskfhe",
@@ -31,21 +32,21 @@ import React from "react";
 
 const AppContext = React.createContext({
   notesGroupData: [],
-  setNotesGroupData: (_v)=>{},
   notesChatData: {},
-  setNotesChatData: (_v)=>{},
+  selectedGroupId: null,
+  setSelectedGroupId: (_v) => {},
   availableColors: [
     "#B38BFA",
     "#FF79F2",
-    "#43E6FC",       
+    "#43E6FC",
     "#F19576",
     "#0047FF",
-    "#6691FF", 
+    "#6691FF",
   ],
-  createNoteGroup: (_v1, _v2)=>{},
+  createNoteGroup: (_v1, _v2) => {},
   popup: false,
-  setPopup: (e)=>{},
+  setPopup: (e) => {},
   error: false,
-  setError: (e)=>{}
+  setError: (e) => {},
 });
 export default AppContext;

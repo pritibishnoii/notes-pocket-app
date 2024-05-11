@@ -1,0 +1,100 @@
+
+
+
+.pop-up{
+  
+}
+
+.transparent-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(49, 49, 49, 0.45);
+    /* padding: 20px; */
+    z-index: 1;
+  }
+
+
+  .addnote-card {
+    position: absolute;
+    top: 10%;
+    left: 40%;
+    width: 430px;
+    height: 170px;
+    background-color: #ffffff;
+    margin: 12% auto;
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    border-radius: 6px;
+    z-index: 1;
+  }
+  .create-group-tittle {
+    color: #000000;
+    font-size: 1rem;
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+  }
+  
+  .create-btn {
+    background-color: #001f8b;
+    width: 98px;
+    color: #ffffff;
+    padding: 9px;
+    border: none;
+    font-size: 0.8rem;
+    border-radius: 8px;
+    letter-spacing: 2px;
+    position: absolute;
+    bottom: 8%;
+    right: 8%;
+  }
+  
+  #note {
+    width: 270px;
+    padding: 8px;
+    border-radius: 22px;
+    outline: none;
+    border: 2px solid #cccccc;
+    color: #000000;
+    margin-left: 13px;
+  }
+  
+  .choose-color {
+    font-size: 0.9rem;
+  }
+  
+  .colorDiv {
+    height: 24px;
+    width: 24px;
+    border-radius: 15px;
+  }
+  .selected {
+    border: 1px solid black;
+  }
+  .choose-color-box {
+    display: flex;
+  }
+  .color-box {
+    display: flex;
+    gap: 9px;
+    margin-left: 18px;
+  }
+  
+  .error-text {
+    font-size: 14px;
+    color: #ff6b6b;
+  }
+
+  .add-btn-img {
+    width: 70px;
+    position: fixed;
+    top: 84%;
+    left: 290px;
+    cursor: pointer;
+  }
+  

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useContext} from "react";
 
 import AppContext from "../../Context/AppContext";
 
@@ -15,7 +15,6 @@ const Popup = () => {
   const [selectedColor, setSelectedColor] = useState("");
   
   return (
-    
       <div className="pop-up">
         <div className="transparent-bg" onClick={() => setPopup(false)}></div>
         <div className="addnote-card">

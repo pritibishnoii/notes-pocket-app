@@ -4,307 +4,31 @@
   margin: 0;
   padding: 0;
 }
+
 body {
   font-family: "Roboto", sans-serif;
   font-style: normal;
 }
 
-.root-container {
+
+
+
+
+
+
+.root-contaianer {
   display: flex;
-}
-
-.container {
-  display: flex;
-  background-color: #dae5f5;
-  width: 100%;
-  height: 100vh;
-  position: relative;
-}
-
-.sidebar-contaianer {
-  width: 400px;
-  height: 99vh;
-  background-color: #ffffff;
-  position: relative;
-}
-
-.note-heading {
-  font-size: 35px;
-  text-align: center;
-  font-weight: 500;
-  margin-top: 12%;
-  /* padding-bottom: 10px; */
-  position: sticky;
-  top: 0;
-  background-color: #ffffff;
-}
-
-.notes-title-section {
-  height: 10vh;
-  display: flex;
-  gap: 2;
-  align-items: center;
-  /* padding-top: 16px; */
-  padding-left: 50px;
-  margin-bottom: 15px;
-}
-
-.circle {
-  width: 60px;
-  height: 60px;
-  color: white;
-  border-radius: 100%;
-  font-size: 23px;
-  display: block;
-  line-height: 60px;
-  align-items: center;
-  text-align: center;
-  font-weight: 500;
-  margin-right: 25px;
-}
-
-.notes-title {
-  font-size: 24px;
-  font-weight: 700;
-}
-
-.add-btn-img {
-  width: 70px;
-  position: fixed;
-  top: 84%;
-  left: 290px;
-  cursor: pointer;
-}
-
-.scroll-section {
-  overflow: auto;
-  width: 400px;
-  height: 100vh;
-
-  /* display:flex;
-    flex-direction: column; */
-}
-
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: #d9d9d9;
-  border-radius: 5.5px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #ffffff;
-  border-radius: 5.5px;
-}
-
-.transparent-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(49, 49, 49, 0.45);
-  /* padding: 20px; */
-  z-index: 1;
-}
-
-.addnote-card {
-  position: absolute;
-  top: 10%;
-  left: 40%;
-  width: 430px;
-  height: 170px;
   background-color: #ffffff;
-  margin: 12% auto;
-  padding: 22px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  border-radius: 6px;
-  z-index: 1;
-}
-.create-group-tittle {
-  color: #000000;
-  font-size: 1rem;
-  font-family: "Roboto", sans-serif;
-  font-weight: 600;
-  font-style: normal;
 }
 
-.create-btn {
-  background-color: #001f8b;
-  width: 98px;
-  color: #ffffff;
-  padding: 9px;
-  border: none;
-  font-size: 0.8rem;
-  border-radius: 8px;
-  letter-spacing: 2px;
-  position: absolute;
-  bottom: 8%;
-  right: 8%;
-}
 
-#note {
-  width: 270px;
-  padding: 8px;
-  border-radius: 22px;
-  outline: none;
-  border: 2px solid #cccccc;
-  color: #000000;
-  margin-left: 13px;
-}
 
-.choose-color {
-  font-size: 0.9rem;
-}
 
-.colorDiv {
-  height: 24px;
-  width: 24px;
-  border-radius: 15px;
-}
-.selected {
-  border: 1px solid black;
-}
-.choose-color-box {
-  display: flex;
-}
-.color-box {
-  display: flex;
-  gap: 9px;
-  margin-left: 18px;
-}
 
-.error-text {
-  font-size: 14px;
-  color: #ff6b6b;
-}
 
-.container {
-  display: flex;
-  background-color: #dae5f5;
-  width: 100%;
-  height: 100vh;
-}
-.main {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 100%;
-  height: 70%;
-  align-items: center;
-  transform: translate(-20%, 10%);
-}
 
-.notes-section {
-  margin: auto;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 
-.note-text {
-  font-size: 40px;
-  font-weight: 700;
-}
 
-.note-description {
-  font-size: 20px;
-  font-weight: 500;
-  width: 600px;
-}
 
-.Note-bg-img {
-  width: 500px;
-}
-
-.encrypted-box {
-  display: flex;
-  position: absolute;
-  bottom: 12px;
-  left: 20%;
-}
-
-.chat-container {
-  background-color: #dae5f5;
-  position: absolute;
-  left: 29%;
-  width: 71%;
-}
-.chatSc {
-  width: 100%;
-  height: 90px;
-  /* margin-left: 2px; */
-  background-color: blue;
-  position: fixed;
-  top: 0;
-
-}
-.header {
-  width: 100%;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  gap: 32px;
-}
-
-.back-img {
-  width: 22px;
-  height: 22px;
-  margin-top: 22px;
-  margin-left: 22px;
-}
-.chat-input {
-  width: 70%;
-  height: 32vh;
-  background-color: blue;
-  position: fixed;
-  bottom: 0;
-  right: 5px;
-}
-.send-btn {
-  height: 70px;
-  transform: translate(90%, -120%);
-}
-.chat-input textarea {
-  resize: none;
-  width: 95%;
-  height: 25vh;
-  background-color: #fff;
-  margin: 22px;
-  outline: none;
-  border-radius: 7px;
-}
-::placeholder {
-  font-size: 18px;
-}
-
-.note-box {
-  width: 66%;
-  height: 200px;
-  background-color: #ffffff;
-  display: flex;
-  margin-left: 3%;
-  margin-top: 5%;
-  flex-direction: column;
-  position: relative;
-}
-.date {
-  position: absolute;
-  bottom: 12px;
-  right: 15%;
-}
-.time {
-  position: absolute;
-  bottom: 12px;
-  right: 4%;
-}
-.text-note {
-  margin: 26px;
-}
-@media only screen and (max-width: 768px) {
-}

@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import { nanoid } from "nanoid";
 import Home from "./Components/Home";
 import Sidebar from "./Components/Sidebar";
+import Popup from "./Components/Popup";
 import AppContext from "./Context/AppContext.js";
+import { saveGroupDataToLS, saveChatDataToLS } from './utils/storage';
 
 
 function App() {
@@ -10,6 +12,7 @@ function App() {
   const [error, setError] = useState(false);
   const [notesGroupData, setNotesGroupData] = useState([]);
   const [notesChatData, setNotesChatData] = useState({});
+  const [selectedGroupId, setSelectedGroupId] = useState(null);
   const availableColors = [
     "#B38BFA",
     "#FF79F2",
@@ -38,22 +41,24 @@ function App() {
       return;
     };
     setPopup(false);
-    setNotesGroupData([...notesGroupData, {
+
+    const updatedNotesGroupData = [...notesGroupData, {
       "id": nanoid(10),
       "title": title.trim(),
       "color": color,
       "titleLetter": getTitleLetter(title),
-    }])
-
+    }]
+    setNotesGroupData(updatedNotesGroupData);
+    saveGroupDataToLS(updatedNotesGroupData);
   }
 
   const ctxValue = {
     notesGroupData,
-    setNotesGroupData,
     notesChatData,
-    setNotesChatData,
     availableColors,
     createNoteGroup,
+    selectedGroupId,
+    setSelectedGroupId,
     popup,
     setPopup,
     error,
@@ -65,6 +70,7 @@ function App() {
       <div className="root-container">
         <Sidebar />
         <Home />
+        {popup && <Popup />}
       </div>
     </AppContext.Provider>
   );
