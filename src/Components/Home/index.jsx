@@ -34,7 +34,13 @@ function Home() {
         <p className="encrypted-text"> end-to-end encrypted</p>
       </div>
 
-      <div className="chat-container">
+
+<div className="chat-container">
+      <div className="chat-header">
+      <img src={backIcon} alt="back" style={{color:'#fff',}} />
+        <h1 className="chat-title-circle circle">MN</h1>
+        <h1 className="chat-title">My Name</h1>
+      </div>
         <div className="chatSc">
           {chatData && chatData.map(item => (
             <div className="note-box">
@@ -45,12 +51,7 @@ function Home() {
             </div>
 
           ))}
-          {/* bullet character    •  &bull; */}
-          {/* <span>&#8226;</span> */}
-          {/* new Date(item.timestamp).toLocaleTimeString('en-US', { hour: "2-digit", minute: "2-digit",hour12:true })----> '01:51 PM' */}
-          {/* new Date(item.timestamp).toLocaleDateString('en-US', { hour: "2-digit", minute: "2-digit",hour12:true })  --->  '5/11/2024, 01:49 PM' */}
-          {/* 12 May 2024 
-          new Date().toLocaleDateString("en-GB", {day: "numeric", month : "short", year: "numeric"})     '5/11/2024' '11/05/2024' '11 May 2024' '11 मई 2024' */}
+         
         </div>
       </div>
 

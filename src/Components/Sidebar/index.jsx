@@ -10,6 +10,7 @@ function Sidebar() {
   const { setPopup, notesGroupData } = useContext(AppContext);
 
   return (
+    <div className="container">
     <div className="sidebar-container">
         <h1 className="sidebar-heading-section">Pocket Notes</h1>
         <div class="group-section">
@@ -28,6 +29,7 @@ function Sidebar() {
           src={addNotesButton}
           alt="add-btn"
         />
+    </div>
     </div>
   );
 }

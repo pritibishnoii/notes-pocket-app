@@ -20,20 +20,20 @@ const Popup = () => {
         <div className="addnote-card">
           <p className="create-group-tittle">Create New group</p>
           <label
-            className=" choose-grp-name create-group-tittle"
+            className=" choose-group "
             htmlFor="note"
           >
             Group Name
             <input
+              className="popup-input"
               onChange={(e) => setTitleText(e.target.value)}
               type="text"
-              id="note"
               value={titleText}
               placeholder="Enter  group name"
             />
           </label>
           <div className="choose-color-box">
-            <label className=" choose-color  create-group-tittle">
+            <label className=" choose-color ">
               Choose colour
             </label>
             <div className="color-box">

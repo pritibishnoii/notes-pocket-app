@@ -1,39 +1,45 @@
-.sidebar-container {
+.container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 25%;
-  height: 100%;
-  background-color: cadetblue;
+  background-color: #dae5f5;
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+}
+
+.sidebar-container {
+  width: 400px;
+  height: 99.5vh;
+
+  background-color: white;
 }
 
 .sidebar-heading-section {
   position: sticky;
-  font-size: 35px;
+  top: 0;
   text-align: center;
   font-weight: 500;
-  background-color: coral;
- 
-
+  font-size: 30px;
+  padding-top: 14%;
+  padding-bottom: 8%;
+  background-color: #ffffff;
 }
 
 .notes-title-section {
   height: 10vh;
+
   display: flex;
-  gap: 2;
+  gap: 5;
   align-items: center;
   padding-left: 50px;
-  margin-bottom: 15px;
-  background-color: crimson;
- 
+  margin-bottom: 10px;
 }
 
 .circle {
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   color: white;
   border-radius: 100%;
-  font-size: 23px;
+  font-size: 22px;
   display: block;
   line-height: 60px;
   align-items: center;
@@ -43,25 +49,46 @@
 }
 
 .notes-title {
-  font-size: 24px;
-  font-weight: 700;
+  font-size: 22px;
+  font-weight: 600;
 }
 
-.scroll-section {
+.group-section{
   overflow: auto;
   width: 400px;
-  height: 100vh;
+  height: 85vh;
 }
 ::-webkit-scrollbar {
-    width: 10px;
-  }
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #d9d9d9;
+  border-radius: 5.5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ffffff;
+  border-radius: 5.5px;
+}
+
+
+
+
+
+@media only screen and (max-width: 768px) {
   
-  ::-webkit-scrollbar-track {
-    background: #d9d9d9;
-    border-radius: 5.5px;
+  .sidebar-container {
+    width: 100%;
+    height: 99.5vh;
+    overflow: hidden;
+    background-color: white;
   }
-  
-  ::-webkit-scrollbar-thumb {
-    background: #ffffff;
-    border-radius: 5.5px;
+
+  .sidebar-headng-text {
+    width: 100%;
+    padding-left: 60px;
+    text-align: left;
   }
+
+}
