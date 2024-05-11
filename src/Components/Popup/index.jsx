@@ -1,4 +1,4 @@
-import React, {useState, useContext} from "react";
+import React, { useState, useContext } from "react";
 
 import AppContext from "../../Context/AppContext";
 
@@ -13,57 +13,63 @@ const Popup = () => {
   } = useContext(AppContext);
   const [titleText, setTitleText] = useState("");
   const [selectedColor, setSelectedColor] = useState("");
-  
+
   return (
-      <div className="pop-up">
-        <div className="transparent-bg" onClick={() => setPopup(false)}></div>
-        <div className="addnote-card">
-          <p className="create-group-tittle">Create New group</p>
+    <div className="popup-container">
+      <div className="popup-transparent-bg" onClick={() => setPopup(false)} />
+      <div className="popup-modal">
+        <h3 className="popup-modal-title">Create New group</h3>
+        <div className="group-title">
           <label
-            className=" choose-group "
-            htmlFor="note"
+            className="group-title-input-label"
+            htmlFor="group-title-input"
           >
             Group Name
-            <input
-              className="popup-input"
-              onChange={(e) => setTitleText(e.target.value)}
-              type="text"
-              value={titleText}
-              placeholder="Enter  group name"
-            />
           </label>
-          <div className="choose-color-box">
-            <label className=" choose-color ">
-              Choose colour
-            </label>
-            <div className="color-box">
-              {colors.map((color, index) => {
-                return (
-                  <div
-                    className={"colorDiv"}
-                    key={`${index}-${color}`}
-                    style={{ backgroundColor: color }}
-                    onClick={(e) => {
-                      e.target.classList.add("selected");
-                      setSelectedColor(color);
-                    }}
-                  />
-                );
-              })}
-            </div>
-          </div>
-          <button
-            onClick={() => {
-              createNoteGroup(titleText, selectedColor);
-            }}
-            className="create-btn"
-          >
-            Create
-          </button>
-          {error && <label className="error-text">fill both fields</label>}
+          <input
+            onChange={(e) => setTitleText(e.target.value)}
+            type="text"
+            id="group-title-input"
+            className="group-title-input"
+            value={titleText}
+            placeholder="Enter group name"
+          />
         </div>
+
+        <div className="group-color">
+          <label className="group-color-input-label" htmlFor="">
+            Choose colour
+          </label>
+          <div className="group-color-opts">
+            {colors.map((color, index) => {
+              return (
+                <input
+                  className="group-color-choice"
+                  type="radio"
+                  name="group-color-choice"
+                  value={color}
+                  key={`${index}-${color}`}
+                  style={{ backgroundColor: color }}
+                  onClick={() => {
+                    setSelectedColor(color);
+                  }}
+                />
+              );
+            })}
+          </div>
+        </div>
+        <button
+          onClick={() => {
+            createNoteGroup(titleText, selectedColor);
+          }}
+          className="create-btn"
+        >
+          Create
+        </button>
+        {error && <label className="error-text">fill both fields</label>}
       </div>
-    );
+    </div>
+  );
 };
 
 export default Popup;

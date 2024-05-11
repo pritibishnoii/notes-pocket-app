@@ -44,6 +44,7 @@ const AppContext = React.createContext({
     "#6691FF",
   ],
   createNoteGroup: (_v1, _v2) => {},
+  createNotesChat: (_v) => {},
   popup: false,
   setPopup: (e) => {},
   error: false,

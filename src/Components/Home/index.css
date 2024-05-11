@@ -1,137 +1,147 @@
 .main-container {
-  display: flex;
+  position: relative;
   background-color: #dae5f5;
-  width: 100%;
+  width: 75%;
   height: 100%;
 }
+
 .main-container-bg {
   display: flex;
   flex-direction: column;
-  width: 50%;
-  height: 70%;
-  position: absolute;
-  top: 6%;
-  right: 11%;
-
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }
 
 .notes-section {
-  margin: auto;
-  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.note-text {
-  font-size: 40px;
-  font-weight: 700;
+  justify-content: center;
+  text-align: center;
 }
 
 .note-description {
   font-size: 20px;
   font-weight: 500;
-  width: 600px;
+  max-width: 70%;
 }
 
-.Note-bg-img {
+.note-bg-img {
   width: 500px;
 }
 
 .encrypted-box {
-  display: flex;
   position: absolute;
-  bottom: 12px;
-  left: 20%;
+  display: flex;
+  bottom: 40px;
 }
 
 .chat-container {
-  background-color: #dae5f5;
-  position: absolute;
-  left: 29%;
-  width: 71%;
-}
-.chat-header {
   width: 100%;
-  height: 80px;
-  margin-left: 6px;
-  background-color: #001f8b;
-  position: fixed;
-  top: 0;
-  color: #fff;
-  display: flex;
-  gap: 12px;
-  align-items: center;
-}
-.chat-title {
-  margin-left: 28px;
-  font-size: 22px;
-  font-weight: 400;
-}
-.chat-title-circle {
-  margin-left: 28px;
-  font-size: 20px;
-  font-weight: 500;
-  margin-bottom: 7px;
-}
-.circle {
-  width: 60px;
-  height: 60px;
-  border-radius: 100%;
-  background-color: #085e08;
-  padding: 9px;
-}
-.back-img {
-  width: 22px;
-  height: 22px;
-  margin-top: 22px;
-  margin-left: 22px;
-}
-.chat-input {
-  width: 70%;
-  height: 32vh;
-  background-color: #001f8b;
-  position: fixed;
-  bottom: 0;
-  right: 5px;
-}
-.send-btn {
-  height: 70px;
-  transform: translate(90%, -120%);
-}
-.chat-input textarea {
-  resize: none;
-  width: 95%;
-  height: 25vh;
-  background-color: #fff;
-  margin: 22px;
-  outline: none;
-  border-radius: 7px;
-}
-::placeholder {
-  font-size: 18px;
+  height: 100%;
+  background-color: #dae5f5;
+  overflow: hidden;
 }
 
-.note-box {
-  width: 66%;
-  height: 200px;
-  background-color: #ffffff;
+.chat-container .group-title-container {
   display: flex;
-  margin-left: 3%;
-  margin-top: 5%;
+  align-items: center;
+  width: 100%;
+  gap: 8px;
+  padding: 8px 20px;
+  padding-left: 32px;
+  cursor: pointer;
+  background-color: blue;
+}
+
+.chat-container .group-title-container .back-btn {
+  display: none;
+  margin-right: 8px;
+}
+
+.chat-container .group-title-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  font-size: 23px;
+  font-weight: bold;
+}
+
+.chat-container .group-title-content {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.chat-container .chat-list {
+  display: flex;
+  align-items: center;
   flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  height: calc(70% - 45px);
+  padding: 10px;
+  overflow: auto;
+}
+
+.chat-list .note-box {
   position: relative;
+  padding: 3px;
+  padding-bottom: 25px;
+  width: 100%;
+  border-radius: 8px;
+  background-color: #ffffff;
 }
-.date {
+.chat-list .date-time {
   position: absolute;
-  bottom: 12px;
-  right: 15%;
+  right: 20px;
 }
-.time {
+.chat-list .time {
   position: absolute;
   bottom: 12px;
   right: 4%;
 }
-.text-note {
+.chat-list .text-note {
   margin: 26px;
+}
+
+.chat-input {
+  position: fixed;
+  bottom: 0;
+  padding: 20px;
+  width: 75%;
+  height: 25%;
+  background-color: blue;
+}
+.chat-input .send-btn {
+  position: absolute;
+  right: 60px;
+  top: calc(50% - 10px);
+  height: 70px;
+  cursor: pointer;
+}
+.chat-input textarea {
+  resize: none;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  background-color: #fff;
+  outline: none;
+  border-radius: 7px;
+}
+
+@media screen and (max-width: 768px) {
+  .main-container {
+    width: 100%;
+  }
+  .chat-container .group-title-container .back-btn {
+    display: block;
+  }
+  .chat-input {
+    width: 100%;
+  }
 }

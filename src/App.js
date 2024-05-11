@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { nanoid } from "nanoid";
 import Home from "./Components/Home";
 import Sidebar from "./Components/Sidebar";
 import Popup from "./Components/Popup";
 import AppContext from "./Context/AppContext.js";
-import { saveGroupDataToLS, saveChatDataToLS } from './utils/storage';
+import { saveGroupDataToLS, saveChatDataToLS, getGroupDataFromLS, getChatDataFromLS } from "./utils/storage";
 
+import "./App.css";
 
 function App() {
   const [popup, setPopup] = useState(false);
@@ -33,24 +34,55 @@ function App() {
       const secondLetter = splitWord[secondIndex][0] || "";
       return (firstLetter + secondLetter).toUpperCase();
     }
-  }
+  };
+
+  useEffect(()=>{
+    setNotesGroupData(getGroupDataFromLS());
+    setNotesChatData(getChatDataFromLS());
+  }, []);
 
   const createNoteGroup = (title, color) => {
-    if (color === '' || title.trim() === '') {
-      setError(true)
+    if (color === "" || title.trim() === "") {
+      setError(true);
       return;
-    };
+    }
     setPopup(false);
 
-    const updatedNotesGroupData = [...notesGroupData, {
-      "id": nanoid(10),
-      "title": title.trim(),
-      "color": color,
-      "titleLetter": getTitleLetter(title),
-    }]
+    const grpId = nanoid()
+    const updatedNotesGroupData = [
+      ...notesGroupData,
+      {
+        id: grpId,
+        title: title.trim(),
+        color: color,
+        titleLetter: getTitleLetter(title),
+      },
+    ];
     setNotesGroupData(updatedNotesGroupData);
     saveGroupDataToLS(updatedNotesGroupData);
-  }
+    setSelectedGroupId(grpId);
+  };
+
+  const createNotesChat = (text) => {
+    if (text.trim() === "") {
+      return;
+    }
+
+    const updatedNotesChatData = { ...notesChatData };
+
+    if (!notesChatData[selectedGroupId])
+      notesChatData[selectedGroupId] = [];
+    updatedNotesChatData[selectedGroupId] = [
+      ...notesChatData[selectedGroupId],
+      {
+        id: nanoid(10),
+        content: text.trim(),
+        timestamp: Date.now(),
+      },
+    ];
+    setNotesChatData(updatedNotesChatData);
+    saveChatDataToLS(updatedNotesChatData);
+  };
 
   const ctxValue = {
     notesGroupData,
@@ -59,11 +91,12 @@ function App() {
     createNoteGroup,
     selectedGroupId,
     setSelectedGroupId,
+    createNotesChat,
     popup,
     setPopup,
     error,
     setError,
-  }
+  };
 
   return (
     <AppContext.Provider value={ctxValue}>

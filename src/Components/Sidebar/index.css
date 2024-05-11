@@ -1,94 +1,78 @@
-.container {
-  display: flex;
-  background-color: #dae5f5;
-  width: 100%;
-  height: 100vh;
-  overflow: auto;
-}
-
 .sidebar-container {
-  width: 400px;
-  height: 99.5vh;
-
-  background-color: white;
-}
-
-.sidebar-heading-section {
-  position: sticky;
-  top: 0;
-  text-align: center;
-  font-weight: 500;
-  font-size: 30px;
-  padding-top: 14%;
-  padding-bottom: 8%;
-  background-color: #ffffff;
-}
-
-.notes-title-section {
-  height: 10vh;
-
   display: flex;
-  gap: 5;
+  flex-direction: column;
   align-items: center;
-  padding-left: 50px;
-  margin-bottom: 10px;
+  width: 25%;
+  height: 100vh;
+  padding-top: 20px;
+  overflow: hidden;
+  background-color: #fff;
+
 }
 
-.circle {
-  width: 50px;
-  height: 50px;
-  color: white;
-  border-radius: 100%;
-  font-size: 22px;
-  display: block;
-  line-height: 60px;
-  align-items: center;
-  text-align: center;
+.sidebar-heading {
+  position: sticky;
   font-weight: 500;
-  margin-right: 25px;
+  padding: 15px 0;
 }
 
-.notes-title {
-  font-size: 22px;
-  font-weight: 600;
-}
-
-.group-section{
+.sidebar-note-groups {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
   overflow: auto;
-  width: 400px;
-  height: 85vh;
-}
-::-webkit-scrollbar {
-  width: 10px;
+  padding: 0 8px;
 }
 
-::-webkit-scrollbar-track {
-  background: #d9d9d9;
-  border-radius: 5.5px;
+.sidebar-note-groups .group-title-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 8px;
+  padding: 8px 20px;
+  padding-left: 32px;
+  cursor: pointer;
+  border-radius: 8px;
 }
 
-::-webkit-scrollbar-thumb {
-  background: #ffffff;
-  border-radius: 5.5px;
+.sidebar-note-groups .group-title-container.selected {
+  background-color: #f1f1f1;
 }
 
+.sidebar-note-groups .group-title-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  font-size: 23px;
+  font-weight: bold;
+}
 
+.sidebar-note-groups .group-title-content {
+  font-size: 20px;
+  font-weight: 700;
+}
 
+.sidebar-container .add-note-btn {
+  width: 50px;
+  position: fixed;
+  bottom: 20px;
+  left: calc(25% - 100px);
+  cursor: pointer;
+}
 
-
-@media only screen and (max-width: 768px) {
-  
+@media screen and (max-width: 768px) {
   .sidebar-container {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 99.5vh;
-    overflow: hidden;
-    background-color: white;
   }
 
-  .sidebar-headng-text {
-    width: 100%;
-    padding-left: 60px;
-    text-align: left;
+  .sidebar-container .add-note-btn {
+    left: calc(100% - 100px);
   }
-
 }
