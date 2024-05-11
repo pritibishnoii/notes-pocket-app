@@ -2,16 +2,17 @@
   display: flex;
   background-color: #dae5f5;
   width: 100%;
-  height: 100vh;
+  height: 100%;
 }
 .main-container-bg {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  width: 100%;
+  width: 50%;
   height: 70%;
-  align-items: center;
-  transform: translate(-20%, 10%);
+  position: absolute;
+  top: 6%;
+  right: 11%;
+
 }
 
 .notes-section {

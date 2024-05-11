@@ -30,7 +30,7 @@ function Home() {
       </div>
 
       <div className="encrypted-box">
-        <BiSolidLock style={{ marginTop: "2px", marginRight: "9px" }} />
+        <BiSolidLock style={{ marginTop: "2px",marginLeft:'8%' }} />
         <p className="encrypted-text"> end-to-end encrypted</p>
       </div>
 
