@@ -1,5 +1,8 @@
 # Getting Started with Create React App
 
+live - https://6640007bbad0a351fd052c25--pokect-notes-app.netlify.app/
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
