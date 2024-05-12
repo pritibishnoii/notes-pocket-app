@@ -10,6 +10,8 @@ live -https://664015ad82f5fe5ebf049e59--pokect-notes-app.netlify.app/
 ![Screenshot (133)](https://github.com/pritibishnoii/notes-pocket-app/assets/108807403/86bea045-951f-4a1f-97bc-dc29e5a786e0)
 ![Screenshot (134)](https://github.com/pritibishnoii/notes-pocket-app/assets/108807403/3452caed-3790-491c-866b-e06ca598ccd3)
 
+![Screenshot (137)](https://github.com/pritibishnoii/notes-pocket-app/assets/108807403/7bbd6da4-e60a-4428-a7d0-a61dc2c5dd9b)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
