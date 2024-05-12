@@ -61,6 +61,7 @@ function App() {
     setNotesGroupData(updatedNotesGroupData);
     saveGroupDataToLS(updatedNotesGroupData);
     setSelectedGroupId(grpId);
+    
   };
 
   const createNotesChat = (text) => {

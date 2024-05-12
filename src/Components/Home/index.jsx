@@ -6,6 +6,7 @@ import lockImg from "../../assets/lockImg.png";
 import backIcon from "../../assets/backIcon.png";
 import sendIcon from "../../assets/send.png";
 import { BiSolidLock } from "react-icons/bi";
+import sendBlue from '../../assets/sendB.png'
 
 import "./index.css";
 
@@ -38,11 +39,11 @@ function Home() {
             </div>
             <div
               className="group-title-circle"
-              style={{ backgroundColor: groupData.color }}
+              style={{ backgroundColor: groupData.color , color:'#fff'}}
             >
               {groupData.titleLetter}
             </div>
-            <h1 className="group-title-content">{groupData.title}</h1>
+            <h1 className="group-title-content" style={{color:'#fff'}}>{groupData.title}</h1>
           </div>
 
           <div className="chat-list">
@@ -82,6 +83,7 @@ function Home() {
                   setText("");
                 }
               }}
+            
             />
             <div
               className="send-btn"
@@ -90,7 +92,10 @@ function Home() {
                 setText("");
               }}
             >
-              <img src={sendIcon} alt="send" />
+            {/* <img src={sendIcon} alt="send" /> */}
+              {
+                (text !=='')  ? <img src={sendBlue} alt="send"/>:  <img src={sendIcon} alt="send" />
+              }
             </div>
           </div>
         </div>

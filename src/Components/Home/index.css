@@ -95,6 +95,7 @@
   width: 100%;
   border-radius: 8px;
   background-color: #ffffff;
+  
 }
 .chat-list .date-time {
   position: absolute;
@@ -120,7 +121,8 @@
 .chat-input .send-btn {
   position: absolute;
   right: 60px;
-  top: calc(50% - 10px);
+  /* top: calc(50% - 10px); */
+  bottom: 2%;
   height: 70px;
   cursor: pointer;
 }
@@ -132,8 +134,11 @@
   background-color: #fff;
   outline: none;
   border-radius: 7px;
+  font-size: 18px;
 }
-
+::placeholder{
+  font-size: 20px;
+}
 @media screen and (max-width: 768px) {
   .main-container {
     width: 100%;
