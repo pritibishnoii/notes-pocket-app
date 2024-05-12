@@ -34,7 +34,8 @@
 .group-title, .group-color {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  /* justify-content: space-between; */
+  gap: 12px;
 }
 
 .create-btn {
@@ -52,7 +53,7 @@
 }
 
 .group-title-input {
-  /* width: 270px; */
+  width: 220px;
   padding: 8px 16px;
   font-size: 12px;
   border-radius: 22px;
@@ -60,7 +61,9 @@
   border: 2px solid #cccccc;
   color: #000000;
 }
-
+.group-title-input[placeholder]{
+  font-size: 15px;
+}
 .group-color-choice {
   appearance: none;
   border-radius: 50%;

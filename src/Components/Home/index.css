@@ -136,7 +136,7 @@
   border-radius: 7px;
   font-size: 18px;
 }
-::placeholder{
+textarea[placeholder]{
   font-size: 20px;
 }
 @media screen and (max-width: 768px) {
