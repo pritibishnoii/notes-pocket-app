@@ -1,6 +1,7 @@
 # Getting Started with Create React App
 
-live -https://664015ad82f5fe5ebf049e59--pokect-notes-app.netlify.app/
+
+
 
 
 
